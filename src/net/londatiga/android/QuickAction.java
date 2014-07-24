@@ -57,7 +57,7 @@ public class QuickAction extends PopupWindows implements OnDismissListener {
     private int rootWidth=0;
     
     public static final int HORIZONTAL = 0;
-    public static final int VERTICAL = 1;
+//    public static final int VERTICAL = 1;
     
     public static final int ANIM_GROW_FROM_LEFT = 1;
 	public static final int ANIM_GROW_FROM_RIGHT = 2;
@@ -71,7 +71,7 @@ public class QuickAction extends PopupWindows implements OnDismissListener {
      * @param context  Context
      */
     public QuickAction(Context context) {
-        this(context, VERTICAL);
+        this(context, HORIZONTAL);
     }
 
     /**
@@ -87,11 +87,9 @@ public class QuickAction extends PopupWindows implements OnDismissListener {
         
         mInflater 	 = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        if (mOrientation == HORIZONTAL) {
+
             setRootViewId(R.layout.popup_horizontal);
-        } else {
-            setRootViewId(R.layout.popup_vertical);
-        }
+
 
         mAnimStyle 	= ANIM_AUTO;
         mChildPos 	= 0;
