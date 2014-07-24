@@ -4,4 +4,7 @@
     <string name="hello">Hello World, BTAndroidWebViewSelectionActivity!</string>
     <string name="app_name">BT Android WebView Selection</string>
 
+
+    <string name="btn_title_copy">copy</string>
+
 </resources>

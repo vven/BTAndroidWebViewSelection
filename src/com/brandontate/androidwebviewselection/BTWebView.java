@@ -572,7 +572,7 @@ public class BTWebView extends WebView implements TextSelectionJavascriptInterfa
         //Copy action item
         ActionItem buttonOne = new ActionItem();
 
-        buttonOne.setTitle("Button 1");
+        buttonOne.setTitle(mContext.getString(R.string.btn_title_copy));
         buttonOne.setActionId(1);
         buttonOne.setIcon(getResources().getDrawable(R.drawable.menu_search));
 
