@@ -574,21 +574,21 @@ public class BTWebView extends WebView implements TextSelectionJavascriptInterfa
 
         buttonOne.setTitle(mContext.getString(R.string.btn_title_copy));
         buttonOne.setActionId(1);
-        buttonOne.setIcon(getResources().getDrawable(R.drawable.menu_search));
+//        buttonOne.setIcon(getResources().getDrawable(R.drawable.menu_search));
 
-
-        //Highlight action item
-        ActionItem buttonTwo = new ActionItem();
-
-        buttonTwo.setTitle("Button 2");
-        buttonTwo.setActionId(2);
-        buttonTwo.setIcon(getResources().getDrawable(R.drawable.menu_info));
-
-        ActionItem buttonThree = new ActionItem();
-
-        buttonThree.setTitle("Button 3");
-        buttonThree.setActionId(3);
-        buttonThree.setIcon(getResources().getDrawable(R.drawable.menu_eraser));
+//
+//        //Highlight action item
+//        ActionItem buttonTwo = new ActionItem();
+//
+//        buttonTwo.setTitle("Button 2");
+//        buttonTwo.setActionId(2);
+//        buttonTwo.setIcon(getResources().getDrawable(R.drawable.menu_info));
+//
+//        ActionItem buttonThree = new ActionItem();
+//
+//        buttonThree.setTitle("Button 3");
+//        buttonThree.setActionId(3);
+//        buttonThree.setIcon(getResources().getDrawable(R.drawable.menu_eraser));
 
 
 
@@ -599,9 +599,9 @@ public class BTWebView extends WebView implements TextSelectionJavascriptInterfa
         // Add buttons
         mContextMenu.addActionItem(buttonOne);
 
-        mContextMenu.addActionItem(buttonTwo);
-
-        mContextMenu.addActionItem(buttonThree);
+//        mContextMenu.addActionItem(buttonTwo);
+//
+//        mContextMenu.addActionItem(buttonThree);
 
 
 
@@ -615,6 +615,7 @@ public class BTWebView extends WebView implements TextSelectionJavascriptInterfa
                 if (actionId == 1) {
                     // Do Button 1 stuff
                     Log.i(TAG, "Hit Button 1");
+
                 }
                 else if (actionId == 2) {
                     // Do Button 2 stuff
