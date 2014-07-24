@@ -16,6 +16,10 @@
 
 package com.brandontate.androidwebviewselection;
 
+import android.annotation.TargetApi;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.os.Build;
 import android.webkit.WebSettings;
 import android.webkit.WebViewClient;
 import org.json.JSONException;
@@ -48,6 +52,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 /**
  * Webview subclass that hijacks web content selection.
@@ -608,6 +613,7 @@ public class BTWebView extends WebView implements TextSelectionJavascriptInterfa
         //setup the action item click listener
         mContextMenu.setOnActionItemClickListener(new QuickAction.OnActionItemClickListener() {
 
+            @TargetApi(Build.VERSION_CODES.HONEYCOMB)
             @Override
             public void onItemClick(QuickAction source, int pos,
                                     int actionId) {
@@ -615,7 +621,16 @@ public class BTWebView extends WebView implements TextSelectionJavascriptInterfa
                 if (actionId == 1) {
                     // Do Button 1 stuff
                     Log.i(TAG, "Hit Button 1");
-
+                    if(mSelectedText.length()>0){
+                        int version = Build.VERSION.SDK_INT;
+                        Log.e(TAG,"--------------------------version--------->"+version);
+                        if(version>10){
+                            ClipboardManager cmb = (ClipboardManager) mContext.getSystemService(Context.CLIPBOARD_SERVICE);
+                            cmb.setPrimaryClip(ClipData.newPlainText(null, mSelectedText));
+                            Toast.makeText(mContext, mContext.getString(R.string.copied_to_clipboard), Toast.LENGTH_SHORT).show();
+                            endSelectionMode();
+                        }
+                    }
                 }
                 else if (actionId == 2) {
                     // Do Button 2 stuff
